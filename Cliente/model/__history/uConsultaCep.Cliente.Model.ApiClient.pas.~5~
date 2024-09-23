@@ -1,0 +1,38 @@
+unit uConsultaCep.Cliente.Model.ApiClient;
+
+interface
+
+uses
+  System.JSON,
+  uConsultaCep.Cliente.Model.ApiClient.Interfaces;
+
+type
+  TApiClient = class(TInterfacedObject, IApiClient)
+  public
+    function retornaCep(const pCEP: string): TJSONObject;
+  end;
+
+implementation
+
+uses
+   REST.Client;
+{ TApiClient }
+
+function TApiClient.retornaCep(const pCEP: string): TJSONObject;
+var
+  lRESTClient1: TRESTClient;
+  lRESTRequest1: TRESTRequest;
+  lRESTResponse1: TRESTResponse;
+begin
+  lRESTClient1            := TRESTClient.Create(nil);
+  lRESTRequest1           := TRESTRequest.Create(nil);
+  lRESTResponse1          := TRESTResponse.Create(nil);
+  lRESTRequest1.Client    := lRESTClient1;
+  lRESTRequest1.Response  := lRESTResponse1;
+  lRESTClient1.BaseURL    := 'http://localhost:8080/cep/' + pCEP;
+  lRESTRequest1.Execute;
+  Result := lRESTResponse1.JSONValue as TJSONObject;
+
+end;
+
+end.

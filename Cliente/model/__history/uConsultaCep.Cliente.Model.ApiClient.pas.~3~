@@ -1,0 +1,18 @@
+unit uConsultaCep.Cliente.Model.ApiClient;
+
+interface
+
+uses
+  System.JSON,
+  uConsultaCep.Cliente.Model.ApiClient.Interfaces;
+
+type
+  TApiClient = class(TInterfacedObject, IApiClient)
+  public
+    function retornaCep(const pCEP: string): TJSONObject;
+  end;
+
+
+implementation
+
+end.

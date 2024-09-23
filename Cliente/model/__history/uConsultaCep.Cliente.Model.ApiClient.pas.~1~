@@ -1,0 +1,9 @@
+unit uConsultaCep.Cliente.Model.ApiClient;
+
+interface
+
+uses uConsultaCep.Cliente.Model.ApiClient.Interfaces;
+
+implementation
+
+end.

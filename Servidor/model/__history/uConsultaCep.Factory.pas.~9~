@@ -1,0 +1,37 @@
+unit uConsultaCep.Factory;
+
+interface
+
+uses
+  uConsultaCep.Interfaces;
+
+type
+  TCepServiceFactory = class
+  public
+    class function CreateViaCEP     : ICepService;
+    class function CreateApiCEP     : ICepService;
+    class function CreateAwesomeAPI : ICepService;
+  end;
+
+implementation
+
+uses uConsultaCep;
+
+
+class function TCepServiceFactory.CreatePrimaryService: ICepService;
+begin
+  Result := TViaCepService.Create;
+end;
+
+class function TCepServiceFactory.CreateSecondaryService: ICepService;
+begin
+  Result := TApiCepService.Create;
+end;
+
+class function TCepServiceFactory.CreateTertiaryService: ICepService;
+begin
+  Result := TAwesomeApiService.Create;
+end;
+
+
+end.

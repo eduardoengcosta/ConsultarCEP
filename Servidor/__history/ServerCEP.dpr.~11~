@@ -1,0 +1,58 @@
+program ServerCEP;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  Horse,
+  Horse.Cors,
+  Horse.GBSwagger,
+
+  System.SysUtils,
+  uConsultaCep.Interfaces in 'model\uConsultaCep.Interfaces.pas',
+  uConsultaCep in 'model\uConsultaCep.pas',
+  uConsultaCep.FallBack in 'model\uConsultaCep.FallBack.pas',
+  uConsultaCep.API.Interfaces in 'model\uConsultaCep.API.Interfaces.pas',
+  uConsultaCep.Controller in 'model\uConsultaCep.Controller.pas',
+  uConsultaCep.model.State in 'model\uConsultaCep.model.State.pas',
+  uConsultaCep.Factory in 'model\uConsultaCep.Factory.pas',
+  uConsultaCep.Cliente.Model.Constantes in '..\Cliente\model\uConsultaCep.Cliente.Model.Constantes.pas';
+
+begin
+  THorse.Use(HorseSwagger);
+
+  Swagger
+    .Info
+      .Title('CEP Consulta API')
+      .Version('1.0')
+      .Description('API para consulta de CEP utilizando múltiplas fontes (ViaCEP, Apicep, AwesomeAPI)')
+    .&End;
+
+  Swagger
+      .BasePath('v1')
+      .Path('cep')
+        .Tag('GetCepHandler')
+        .GET('List All', 'List All Users')
+          .AddResponse(200, 'successful operation')
+            .Schema(TUser)
+            .IsArray(True)
+          .&End
+          .AddResponse(400, 'Bad Request')
+            //.Schema(TAPIError)
+          .&End
+          .AddResponse(500, 'Internal Server Error')
+           // .Schema(TAPIError)
+          .&End
+        .&End
+      .&End
+    .&End;
+
+
+  try
+    TControleAPICep.New.Registrar;
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

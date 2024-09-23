@@ -1,0 +1,72 @@
+unit uConsultaCep.Cliente.Model.Adapter;
+
+interface
+
+uses
+  uConsultaCep.Cliente.Model.Retorno.Interfaces,
+  uConsultaCep.Cliente.Model.ViaCEP.Interfaces,
+  uConsultaCep.Cliente.Model.AwesomeApi.Interfaces,
+  uConsultaCep.Cliente.Model.APICEP.Interfaces,
+  uConsultaCep.Cliente.Model.Adapter.Interfaces;
+
+type
+  TAdapterDadosCEP = class(TInterfacedObject, iAdapterDadosCEP)
+  private
+    function retornaDados(const pDados: iDadosViaCEP): iRetornoDadosCEP; overload;
+   function retornaDados(const pDados: iAwesomeAPI): iRetornoDadosCEP; overload;
+   function retornaDados(const pDados: iAPICep): iRetornoDadosCEP; overload;
+  public
+    function retornaDados(const pDados: string): iRetornoDadosCEP; overload;
+
+    class function New: iAdapterDadosCEP;
+  end;
+
+implementation
+
+{ TAdapterDadosCEP }
+
+uses uConsultaCep.Cliente.Model.Retorno;
+
+class function TAdapterDadosCEP.New: iAdapterDadosCEP;
+begin
+  Result := Self.Create;
+end;
+
+function TAdapterDadosCEP.retornaDados(
+  const pDados: iDadosViaCEP): iRetornoDadosCEP;
+begin
+  Result              := TRetornoDadosCEP.New;
+  Result.Cep          := pDados.Cep;
+  Result.Logradouro   := pDados.Logradouro;
+  Result.Complemento  := pDados.Complemento;
+  Result.Bairro       := pDados.Bairro;
+  Result.UF           := pDados.UF;
+  Result.Estado       := pDados.Estado;
+  Result.IBGE         := pDados.IBGE;
+  Result.DDD          := pDados.DDD;
+end;
+
+function TAdapterDadosCEP.retornaDados(
+  const pDados: iAwesomeAPI): iRetornoDadosCEP;
+begin
+  Result              := TRetornoDadosCEP.New;
+  Result.Cep          := pDados.Cep;
+  Result.Logradouro   := pDados.Address;
+  Result.Bairro       := pDados.District;
+  Result.UF           := pDados.State;
+  Result.Estado       := pDados.City;
+  Result.IBGE         := pDados.City_Ibge;
+  Result.DDD          := pDados.DDD;
+end;
+
+function TAdapterDadosCEP.retornaDados(const pDados: iAPICep): iRetornoDadosCEP;
+begin
+  Result              := TRetornoDadosCEP.New;
+  Result.Cep          := pDados.Code;
+  Result.Logradouro   := pDados.Address;
+  Result.Bairro       := pDados.District;
+  Result.UF           := pDados.State;
+  Result.Estado       := pDados.State;
+end;
+
+end.

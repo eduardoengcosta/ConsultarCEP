@@ -1,0 +1,67 @@
+program ServerCEP;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  Horse,
+  Horse.Cors,
+  Horse.GBSwagger,
+  System.SysUtils,
+  uConsultaCep.Interfaces in 'model\uConsultaCep.Interfaces.pas',
+  uConsultaCep in 'model\uConsultaCep.pas',
+  uConsultaCep.API.Interfaces in 'model\uConsultaCep.API.Interfaces.pas',
+  uConsultaCep.Controller in 'model\uConsultaCep.Controller.pas',
+  uConsultaCep.model.State in 'model\uConsultaCep.model.State.pas',
+  uConsultaCep.Factory in 'model\uConsultaCep.Factory.pas',
+  uConsultaCep.Cliente.Model.Constantes in '..\Cliente\model\uConsultaCep.Cliente.Model.Constantes.pas',
+  uConsultaCep.Cliente.Model.Retorno.Interfaces in '..\Cliente\model\uConsultaCep.Cliente.Model.Retorno.Interfaces.pas',
+  uConsultaCep.Cliente.Model.Retorno in '..\Cliente\model\uConsultaCep.Cliente.Model.Retorno.pas',
+  uConsultaCep.Cliente.Model.Adapter.Interfaces in '..\Cliente\model\uConsultaCep.Cliente.Model.Adapter.Interfaces.pas',
+  uConsultaCep.Cliente.Model.Adapter in '..\Cliente\model\uConsultaCep.Cliente.Model.Adapter.pas',
+  uConsultaCep.Cliente.Model.APICEP.Interfaces in '..\Cliente\model\uConsultaCep.Cliente.Model.APICEP.Interfaces.pas',
+  uConsultaCep.Cliente.Model.APICEP in '..\Cliente\model\uConsultaCep.Cliente.Model.APICEP.pas',
+  uConsultaCep.Cliente.Model.AwesomeApi.Interfaces in '..\Cliente\model\uConsultaCep.Cliente.Model.AwesomeApi.Interfaces.pas',
+  uConsultaCep.Cliente.Model.AwesomeApi in '..\Cliente\model\uConsultaCep.Cliente.Model.AwesomeApi.pas',
+  uConsultaCep.Cliente.Model.ViaCEP.Interfaces in '..\Cliente\model\uConsultaCep.Cliente.Model.ViaCEP.Interfaces.pas',
+  uConsultaCep.Cliente.Model.ViaCEP in '..\Cliente\model\uConsultaCep.Cliente.Model.ViaCEP.pas';
+
+begin
+  THorse.Use(HorseSwagger);
+
+  Swagger
+    .Info
+      .Title('CEP Consulta API')
+      .Version('1.0')
+      .Description('API para consulta de CEP utilizando múltiplas fontes (ViaCEP, Apicep, AwesomeAPI)')
+    .&End
+
+    .Path('cep')
+      .Tag('GetCepHandler')
+      .GET('Dados do Endereço', 'Retorna as informações do endereço.')
+        .AddParamQuery('cep','Digite o cep')
+        .IsArray(False)
+        .&End
+        .AddResponse(200, 'successful operation')
+          .Schema(TRetornoDadosCEP)
+          .IsArray(True)
+        .&End
+        .AddResponse(400, 'Bad Request')
+        .&End
+        .AddResponse(500, 'Não foi possível consultar o CEP')
+        .&End
+      .&End
+    .&End
+  .&End;
+
+
+  try
+    Writeln(Format('Servidor de consulta de CEP - Iniciado - Porta: %d', [THorse.Port]));
+    TControleAPICep.New.Registrar;
+
+  except
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+end.

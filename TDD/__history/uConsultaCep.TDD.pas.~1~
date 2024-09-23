@@ -1,0 +1,19 @@
+unit uConsultaCep.TDD;
+
+interface
+
+uses
+  DUnitX.TestFramework;
+
+type
+  [TestFixture]
+  TTesteConsultaCEP = class
+  public
+  end;
+
+implementation
+
+initialization
+  TDUnitX.RegisterTestFixture(TTesteConsultaCEP);
+
+end.

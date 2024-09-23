@@ -1,0 +1,19 @@
+unit uConsultaCep.Cliente.Model.APICEP;
+
+interface
+
+
+type
+  TAPICep = class(TInterfacedObject, iAPICep)
+  strict private
+
+  private
+
+  public
+    class function New: iAPICep;
+  end;
+
+
+implementation
+
+end.

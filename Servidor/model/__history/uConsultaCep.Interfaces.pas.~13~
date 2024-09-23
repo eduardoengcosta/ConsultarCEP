@@ -1,0 +1,19 @@
+unit uConsultaCep.Interfaces;
+
+interface
+
+uses
+  uConsultaCep.Cliente.Model.ViaCEP.Interfaces,
+  uConsultaCep.Cliente.Model.AwesomeApi.Interfaces,
+  uConsultaCep.Cliente.Model.APICEP.Interfaces;
+
+type
+  iCepService = interface
+    ['{F8E39E9B-D349-49F2-9291-CEB8B5B31C90}']
+    function GetCepInfo(const pCEP: string): string
+  end;
+
+
+implementation
+
+end.

@@ -1,0 +1,16 @@
+unit uConsultaCep.Cliente.Model.ApiClient.Interfaces;
+
+interface
+
+uses
+  System.JSON;
+
+type
+  IApiClient = interface
+    ['{A57F26CE-4A9A-5BB1-B8E2-BE8C42C9BAE1}']
+    function GetCepData(const ACEP: string): TJSONObject;
+  end;
+
+implementation
+
+end.

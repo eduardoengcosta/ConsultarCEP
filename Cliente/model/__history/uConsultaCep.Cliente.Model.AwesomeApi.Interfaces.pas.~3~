@@ -1,0 +1,56 @@
+unit uConsultaCep.Cliente.Model.AwesomeApi.Interfaces;
+
+interface
+
+type
+  iAwesomeAPI = interface
+  ['{CC9ED5DC-75B7-4E7E-ABB7-C7FC5282A242}']
+
+  function getCep: string;
+  procedure setCep(const pValor: String);
+   {
+  "cep": "05424020",
+  "address_type": "Rua",
+  "address_name": "Professor Carlos Reis",
+  "address": "Rua Professor Carlos Reis",
+  "district": "Pinheiros",
+  "state": "SP",
+  "city": "São Paulo",
+  "state": "SP",
+  "lat": "-23.5703026",
+  "lng": "-46.6967364",
+  "ddd": "11",
+  "city_ibge": "3550308"
+}
+  function getAddress_Type: string;
+  procedure setAddress_Type(const pValor: String);
+
+  function getAddress_Name: string;
+  procedure setAddress_Name(const pValor: String);
+
+    function getCep: string;
+    procedure setCep(const pValor: String);
+    function getCep: string;
+    procedure setCep(const pValor: String);
+    function getCep: string;
+    procedure setCep(const pValor: String);
+    function getCep: string;
+    procedure setCep(const pValor: String);
+    function getCep: string;
+    procedure setCep(const pValor: String);
+    function getCep: string;
+    procedure setCep(const pValor: String);
+    function getCep: string;
+    procedure setCep(const pValor: String);
+    function getCep: string;
+    procedure setCep(const pValor: String);
+    function getCep: string;
+    procedure setCep(const pValor: String);
+
+
+
+  end;
+
+implementation
+
+end.

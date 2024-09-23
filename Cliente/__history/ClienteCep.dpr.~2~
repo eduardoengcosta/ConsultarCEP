@@ -1,0 +1,17 @@
+program ClienteCep;
+
+uses
+  System.StartUpCopy,
+  FMX.Forms,
+  uPrincipal in 'uPrincipal.pas' {Form1},
+  uConsultaCep.Cliente.Model.ApiClient.Interfaces in 'model\uConsultaCep.Cliente.Model.ApiClient.Interfaces.pas',
+  uConsultaCep.Cliente.Model.ApiClient in 'model\uConsultaCep.Cliente.Model.ApiClient.pas',
+  uConsultaCep.Cliente.Model.Constantes in 'model\uConsultaCep.Cliente.Model.Constantes.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

@@ -1,0 +1,52 @@
+unit uConsultaCep.Cliente.Model.APICEP;
+
+interface
+
+uses
+  System.JSON,
+  uConsultaCep.Cliente.Model.APICEP.Interfaces;
+
+type
+  TAPICep = class(TInterfacedObject, iAPICep)
+  strict private
+    Fstatus: string;
+    FCode: string;
+    FState: string;
+    FCity: string;
+    FDistrict: string;
+    FAddress: string;
+  private
+   function getstatus: string;
+    procedure setstatus(const pValor: String);
+
+    function getCode: string;
+    procedure setCode(const pValor: String);
+
+    function getState: string;
+    procedure setState(const pValor: String);
+
+    function getCity: string;
+    procedure setCity(const pValor: String);
+
+    function getDistrict: string;
+    procedure setDistrict(const pValor: String);
+
+    function getAddress: string;
+    procedure setAddress(const pValor: String);
+  public
+    procedure CarregarDados(const pJSON: TJSONObject);
+
+    property Status   : string read getStatus   write setStatus;
+    property Code     : string read getCode     write setCode;
+    property State    : string read getState    write setState;
+    property City     : string read getCity     write setCity;
+    property District : string read getDistrict write setDistrict;
+    property Address  : string read getAddress  write setAddress;
+
+    class function New: iAPICep;
+  end;
+
+
+implementation
+
+end.

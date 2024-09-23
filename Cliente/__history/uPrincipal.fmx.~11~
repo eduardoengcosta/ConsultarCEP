@@ -1,0 +1,112 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object edtCep: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 40.000000000000000000
+    Position.Y = 40.000000000000000000
+  end
+  object Label1: TLabel
+    Position.X = 40.000000000000000000
+    Position.Y = 24.000000000000000000
+    Text = 'Cep'
+    TabOrder = 2
+  end
+  object GroupBox1: TGroupBox
+    Position.X = 40.000000000000000000
+    Position.Y = 70.000000000000000000
+    Size.Width = 545.000000000000000000
+    Size.Height = 195.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Logradouro '
+    TabOrder = 3
+    object edtEndereco: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 43
+      Position.X = 20.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 309.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label2: TLabel
+      Position.X = 20.000000000000000000
+      Position.Y = 30.000000000000000000
+      Size.Width = 61.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Endere'#231'o'
+      TabOrder = 45
+    end
+    object edtComplemento: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 39
+      Position.X = 348.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 189.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label3: TLabel
+      Position.X = 348.000000000000000000
+      Position.Y = 30.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Complemento'
+      TabOrder = 41
+    end
+    object Label4: TLabel
+      Position.X = 20.000000000000000000
+      Position.Y = 78.000000000000000000
+      Size.Width = 61.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Endere'#231'o'
+      TabOrder = 44
+    end
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 42
+      Position.X = 20.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 309.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label5: TLabel
+      Position.X = 348.000000000000000000
+      Position.Y = 78.000000000000000000
+      Size.Width = 100.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Complemento'
+      TabOrder = 40
+    end
+    object Edit2: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 38
+      Position.X = 348.000000000000000000
+      Position.Y = 96.000000000000000000
+      Size.Width = 189.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object btnConsulta: TButton
+    Position.X = 148.000000000000000000
+    Position.Y = 40.000000000000000000
+    TabOrder = 4
+    Text = 'Consultar'
+    TextSettings.Trimming = None
+    OnClick = btnConsultaClick
+  end
+end

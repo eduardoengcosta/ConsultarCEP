@@ -1,0 +1,88 @@
+unit uConsultaCep.Controller;
+
+interface
+
+uses
+  Horse,
+  Horse.CORS,
+  System.JSON,
+  uConsultaCep.API.Interfaces, uConsultaCep.Cliente.Model.Adapter.Interfaces,
+  uConsultaCep.Cliente.Model.Retorno.Interfaces,
+  uConsultaCep.Cliente.Model.Retorno, uConsultaCep.Cliente.Model.Adapter;
+
+type
+  TControleAPICep = class(TInterfacedObject, iControleAPICep)
+  private
+    procedure GetCepHandler(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+  public
+     procedure Registrar;
+     class function New: iControleAPICep;
+  end;
+
+implementation
+
+{ TControleAPICep }
+
+uses
+  Rest.Json,
+  uConsultaCep.model.State, uConsultaCep.Factory,
+  uConsultaCep.Cliente.Model.Constantes;
+
+procedure TControleAPICep.GetCepHandler(Req: THorseRequest; Res: THorseResponse;
+  Next: TProc);
+var
+    lContext: TCepServiceContext;
+    lResposta: string;
+    lAdapter : iAdapterDadosCEP;
+    lRetorno : iRetornoDadosCEP;
+    lTipo : TTipoApi;
+begin
+
+   lContext := TCepServiceContext.Create;
+    try
+      // Primeiro tenta ViaCEP
+      lContext.SetState(TCepServiceFactory.CreateViaCEP);
+      lResposta := lContext.GetCepInfo(Req.Params['cep']);
+      lTipo := ttViaCep;
+      // Se falhar, tenta ApiCEP
+      if lResposta = '' then
+      begin
+        lContext.SetState(TCepServiceFactory.CreateApiCEP);
+        lResposta := lContext.GetCepInfo(Req.Params['cep']);
+        lTipo := ttApiCEP;
+      end;
+
+      // Se falhar, tenta AwesomeAPI
+      if lResposta = '' then
+      begin
+        lContext.SetState(TCepServiceFactory.CreateAwesomeAPI);
+        lResposta := lContext.GetCepInfo(Req.Params['cep']);
+        lTipo := ttAwesomeAPI;
+      end;
+
+      if lResposta = '' then
+        Res.Send('Não foi possível consultar o CEP').Status(500)
+      else
+      begin
+        lRetorno := TAdapterDadosCEP.New.retornaDados(lResposta, lTipo);
+        Res.Send( TJson.ObjectToJsonString(TRetornoDadosCEP(lRetorno)) ).Status(200);
+      end;
+    finally
+      lContext.Free;
+    end;
+end;
+
+class function TControleAPICep.New: iControleAPICep;
+begin
+  Result := Self.Create;
+end;
+
+procedure TControleAPICep.Registrar;
+begin
+  THorse.Use(CORS);
+
+  THorse.Get('/cep?cep=:cep', GetCepHandler);
+  THorse.Listen(API_CONSULTA_CEP_PORTA);
+end;
+
+end.

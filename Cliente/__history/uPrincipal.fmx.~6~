@@ -1,0 +1,46 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    Position.X = 40.000000000000000000
+    Position.Y = 40.000000000000000000
+  end
+  object Label1: TLabel
+    Position.X = 40.000000000000000000
+    Position.Y = 24.000000000000000000
+    Text = 'Cep'
+    TabOrder = 2
+  end
+  object GroupBox1: TGroupBox
+    Position.X = 40.000000000000000000
+    Position.Y = 70.000000000000000000
+    Size.Width = 505.000000000000000000
+    Size.Height = 195.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Logradouro '
+    TabOrder = 3
+    object edtEndereco: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 38
+      Position.X = 20.000000000000000000
+      Position.Y = 48.000000000000000000
+    end
+  end
+  object btnConsulta: TButton
+    Position.X = 148.000000000000000000
+    Position.Y = 40.000000000000000000
+    TabOrder = 4
+    Text = 'Consultar'
+    TextSettings.Trimming = None
+    OnClick = btnConsultaClick
+  end
+end

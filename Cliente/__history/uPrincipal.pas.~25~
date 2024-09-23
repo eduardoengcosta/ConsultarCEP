@@ -1,0 +1,76 @@
+unit uPrincipal;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Edit,
+  uConsultaCep.Cliente.Model.Retorno.Interfaces,
+  uConsultaCep.Cliente.Model.Retorno;
+
+type
+  TForm1 = class(TForm)
+    edtCep: TEdit;
+    Label1: TLabel;
+    GroupBox1: TGroupBox;
+    btnConsulta: TButton;
+    edtEndereco: TEdit;
+    procedure btnConsultaClick(Sender: TObject);
+  private
+    { Private declarations }
+    procedure _CarregaCampos(const pValor : iRetornoDadosCEP);
+    procedure _ValidaCampos;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.fmx}
+
+uses
+
+  Rest.Json,
+  uConsultaCep.Cliente.Model.ApiClient.Interfaces,
+  uConsultaCep.Cliente.Model.ApiClient;
+
+procedure TForm1.btnConsultaClick(Sender: TObject);
+var
+  lConecApi : IApiClient;
+  lJson: String;
+  lRetorno: iRetornoDadosCEP;
+begin
+   _ValidaCampos;
+   try
+     lConecApi := TApiClient.New;
+     lJson := lConecApi.retornaCep(edtCep.Text);
+     _CarregaCampos(TJson.JsonToObject<TRetornoDadosCEP>(lJson));
+   except
+     on E: exception do
+       raise Exception.Create(E.Message);
+   end;
+end;
+
+procedure TForm1._CarregaCampos(const pValor : iRetornoDadosCEP);
+begin
+  edtEndereco.Text := pValor.Logradouro;
+  edtComplemento.Text := pValor.Complemento;
+  edtBairro.Text := pValor.Bairro;
+  edtUF.Text := pValor.UF;
+  edtEstado.Text := pValor.Estado;
+  edtCodIBGE.Text := pValor.IBGE;
+  edtDDD.Text := pValor.DDD;
+
+end;
+
+procedure TForm1._ValidaCampos;
+begin
+  if not(edtCep.Text.Length = 8) then
+    raise Exception.Create('O Campo de CEP é inválido!');
+end;
+
+end.

@@ -1,0 +1,19 @@
+unit uConsultaCep.Cliente.Model.Adapter;
+
+interface
+
+uses uConsultaCep.Cliente.Model.Adapter.Interfaces;
+
+type
+  TAdapterDadosCEP = class(TInterfacedObject, iAdapterDadosCEP)
+  strict private
+
+  private
+
+  public
+    class function New: iAdapterDadosCEP;
+  end;
+
+implementation
+
+end.

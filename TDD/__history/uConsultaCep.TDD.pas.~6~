@@ -1,0 +1,40 @@
+unit uConsultaCep.TDD;
+
+interface
+
+uses
+  DUnitX.TestFramework, uConsultaCep.Cliente.Model.ApiClient.Interfaces,
+  uConsultaCep.Cliente.Model.ApiClient,
+  uConsultaCep.Cliente.Model.Retorno.Interfaces,
+  uConsultaCep.Cliente.Model.Retorno;
+
+type
+  [TestFixture]
+  TTesteConsultaCEP = class
+  public
+  [test] procedure ConsultaCep;
+  end;
+
+implementation
+
+{ TTesteConsultaCEP }
+
+procedure TTesteConsultaCEP.ConsultaCep;
+const
+  CEP_TDD= '24725270';
+var
+  lConecApi : IApiClient;
+  lJson: String;
+  lRetorno: iRetornoDadosCEP;
+begin
+     lConecApi := TApiClient.New;
+     lJson := lConecApi.retornaCep(CEP_TDD);
+     lRetorno:= TJson.JsonToObject<TRetornoDadosCEP>(lJson);
+
+  assert.IsTrue(1=1);
+end;
+
+initialization
+  TDUnitX.RegisterTestFixture(TTesteConsultaCEP);
+
+end.

@@ -1,0 +1,13 @@
+unit uConsultaCep.Cliente.Model.AwesomeApi.Interfaces;
+
+interface
+
+type
+  iAwesomeAPI = interface
+  ['{CC9ED5DC-75B7-4E7E-ABB7-C7FC5282A242}']
+
+  end;
+
+implementation
+
+end.

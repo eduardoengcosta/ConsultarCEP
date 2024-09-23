@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/02/01 22:14:37.000.410,=C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 11:04:47.000.870,C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Eduardo\TesteDelphi\ServerCEP.dproj</Transaction>
+    <Transaction>2024/09/20 11:04:54.000.776,=D:\Eduardo\TesteDelphi\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 11:05:34.000.010,D:\Eduardo\TesteDelphi\Unit1.pas=D:\Eduardo\TesteDelphi\model\uConsultaCep.Interfaces.pas</Transaction>
+    <Transaction>2024/09/20 11:06:32.000.385,=D:\Eduardo\TesteDelphi\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 11:06:48.000.604,D:\Eduardo\TesteDelphi\Unit1.pas=D:\Eduardo\TesteDelphi\model\uConsultaCep.pas</Transaction>
+    <Transaction>2024/09/20 11:42:30.000.009,=D:\Eduardo\TesteDelphi\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 11:42:46.000.275,D:\Eduardo\TesteDelphi\Unit1.pas=D:\Eduardo\TesteDelphi\model\uConsultaCep.FallBackpas.pas</Transaction>
+    <Transaction>2024/09/20 11:42:57.000.260,D:\Eduardo\TesteDelphi\model\uConsultaCep.FallBackpas.pas=D:\Eduardo\TesteDelphi\model\uConsultaCep.FallBack.pas</Transaction>
+    <Transaction>2024/09/20 13:46:30.000.459,=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 13:47:19.000.148,D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\persistencia\uConsultaCep.Persistencia.pas=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 14:01:07.000.280,=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 14:01:30.000.028,D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\model\uConsultaCep.Factory.pas=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 14:05:43.000.825,=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 14:05:55.000.953,D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\model\uConsultaCep.Controller.pas=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 14:22:31.000.981,=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 14:23:04.000.966,D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\model\uConsultaCep.API.Interfaces.pas=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 14:49:14.000.902,=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 14:51:33.000.874,D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\model\uConsultaCep.model.State.pas=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\Unit1.pas</Transaction>
+    <Transaction>2024/09/20 15:16:51.000.981,=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\model\uConsultaCep.Controller.pas</Transaction>
+    <Transaction>2024/09/20 15:22:36.000.789,=D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\model\uConsultaCep.Factory.pas</Transaction>
+    <Transaction>2024/09/20 17:38:11.000.085,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.Constantes.pas</Transaction>
+    <Transaction>2024/09/21 22:49:23.000.227,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.Retorno.Interfaces.pas</Transaction>
+    <Transaction>2024/09/21 22:49:54.000.946,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.Retorno.pas</Transaction>
+    <Transaction>2024/09/21 23:13:22.000.642,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.Adapter.pas</Transaction>
+    <Transaction>2024/09/21 23:13:22.000.611,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.Adapter.Interfaces.pas</Transaction>
+    <Transaction>2024/09/21 23:14:22.000.142,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.APICEP.Interfaces.pas</Transaction>
+    <Transaction>2024/09/21 23:14:22.000.455,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.ViaCEP.pas</Transaction>
+    <Transaction>2024/09/21 23:14:22.000.392,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.AwesomeApi.pas</Transaction>
+    <Transaction>2024/09/21 23:14:22.000.189,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.APICEP.pas</Transaction>
+    <Transaction>2024/09/21 23:14:22.000.220,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.AwesomeApi.Interfaces.pas</Transaction>
+    <Transaction>2024/09/21 23:14:22.000.423,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.ViaCEP.Interfaces.pas</Transaction>
+    <Transaction>2024/09/21 23:52:54.000.574,D:\Eduardo\TesteDelphi\ConsultaCep\Servidor\model\uConsultaCep.FallBack.pas=</Transaction>
+  </Transactions>
+</BorlandProject>

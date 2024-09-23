@@ -1,0 +1,32 @@
+unit uConsultaCep.model.State;
+
+interface
+
+uses
+ System.JSON,
+ uConsultaCep.Interfaces;
+
+type
+  TConsultaCEPContext = class
+  private
+    FState: iCepService;
+  public
+    procedure SetState(pNewState: iCepService);
+    function GetCepInfo(const pCEP: string): TJSONObject;
+  end;
+
+implementation
+
+{ TConsultaCEPContext }
+
+function TConsultaCEPContext.GetCepInfo(const pCEP: string): TJSONObject;
+begin
+  Result := FState.GetCepInfo(pCEP);
+end;
+
+procedure TConsultaCEPContext.SetState(pNewState: iCepService);
+begin
+ Self.FState := pNewState;
+end;
+
+end.

@@ -1,0 +1,13 @@
+unit uConsultaCep.Cliente.Model.Adapter.Interfaces;
+
+interface
+
+type
+  iAdapterDadosCEP = interface
+   ['{F93C012B-D838-44D1-B663-9713491EC8FD}']
+
+  end;
+
+implementation
+
+end.

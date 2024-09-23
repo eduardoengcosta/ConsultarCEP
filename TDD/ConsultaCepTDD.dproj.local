@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/02/01 22:14:37.000.410,=C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/22 01:23:04.000.700,=C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/22 01:23:46.000.496,C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Eduardo\TesteDelphi\ConsultaCep\TDD\uConsultaCep.TDD.pas</Transaction>
+    <Transaction>2024/09/22 01:23:57.000.575,C:\Users\Eduardo\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Eduardo\TesteDelphi\ConsultaCep\TDD\ConsultaCepTDD.dproj</Transaction>
+    <Transaction>2024/09/23 08:57:45.947,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.ApiClient.Interfaces.pas</Transaction>
+    <Transaction>2024/09/23 08:57:46.026,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.ApiClient.pas</Transaction>
+    <Transaction>2024/09/23 08:58:19.947,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.Retorno.Interfaces.pas</Transaction>
+    <Transaction>2024/09/23 08:58:20.025,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.Retorno.pas</Transaction>
+    <Transaction>2024/09/23 09:02:10.993,=D:\Eduardo\TesteDelphi\ConsultaCep\Cliente\model\uConsultaCep.Cliente.Model.Constantes.pas</Transaction>
+  </Transactions>
+</BorlandProject>

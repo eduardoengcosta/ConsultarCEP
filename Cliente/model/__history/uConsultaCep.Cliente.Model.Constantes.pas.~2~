@@ -1,0 +1,11 @@
+unit uConsultaCep.Cliente.Model.Constantes;
+
+interface
+
+const
+  API_CONSULTA_CEP_PORTA = '9000';
+  API_CONSULTA_CEP_URI   = 'http://localhost:9000/cep/';
+
+implementation
+
+end.

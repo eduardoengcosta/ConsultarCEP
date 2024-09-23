@@ -1,0 +1,54 @@
+unit uConsultaCep.Cliente.Model.ViaCEP.Interfaces;
+
+interface
+
+type
+  iDadosViaCEP = interface
+  ['{0D48C18F-3323-48AE-8267-4A4CC4F161E4}']
+    function getCep: string;
+    procedure setCep(const pValor: String);
+
+    function getlogradouro: string;
+    procedure setlogradouro(const pValor: String);
+
+    function getComplmento: string;
+    procedure setComplemento(const pValor: String);
+
+    function getUnidade: string;
+    procedure setUnidade(const pValor: String);
+
+    function getBairro: string;
+    procedure setBairro(const pValor: String);
+
+    function getLocalidade: string;
+    procedure setLocalidade(const pValor: String);
+
+    function getUf: string;
+    procedure setUf(const pValor: String);
+
+    function getEstado: string;
+    procedure setEstado(const pValor: String);
+
+    function getRegiao: string;
+    procedure SetRegiao(const pValor: String);
+
+    function getIBGE: string;
+    procedure SetIBGE(const pValor: String);
+
+    function getGia: string;
+    procedure SetGia(const pValor: String);
+
+    function getDDD: string;
+    procedure SetDDD(const pValor: String);
+
+    function getsiafi: string;
+    procedure setsiafi(const pValor: String);
+
+    procedure CarregarDados(const pJSON: string);
+
+    property Cep: String read getCep write setCep;
+  end;
+
+implementation
+
+end.
